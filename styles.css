@@ -26,7 +26,7 @@ body,div,ul,li,a,h1,h2,h3,p {
 .cards-container {
     display: grid;
     grid-template-columns: 1fr;
-    max-width: 1300px;
+    max-width: 900px;
     margin: auto;
     margin-top: 40px;
     gap: 20px;
@@ -34,17 +34,13 @@ body,div,ul,li,a,h1,h2,h3,p {
     min-height: 80dvh;
 }
 
-.card {
+.card, .slider{
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 2px #0009;
     border-radius: 12px;
     padding: 12px;
     gap: 12px;
-}
-
-.card-content p {
-    min-height: 100%;
 }
 
 .card-profile {
@@ -57,3 +53,118 @@ img {
     border-radius: 50%;
     height: 80px;
 }
+
+.slider {
+    padding: 20px 30px;
+    align-items: center;
+}
+
+.slider-imgs {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.slider-imgs img {
+    height: 55px;
+    padding: 10px;
+    opacity: 0.4;
+}
+
+.slider-imgs .img-2 {
+    height: 70px;
+    opacity: 1;
+}
+
+.slider-imgs span {
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 12px;
+}
+
+@media screen and (min-width: 600px) {
+    .cards-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card-content, .slider {
+        font-size: 1.1rem;
+        font-weight: 400;
+    }
+
+    /* CARD 1 */
+    .card-1 {
+        flex-direction: column-reverse;
+        box-shadow: none;
+        padding: 0;
+        justify-content: start;
+    }
+
+    .card-content-1 {
+        background-color: #222;
+        color: #fff;
+        padding: 20px;
+        border-radius: 16px;
+        margin-bottom: 12px;
+        position: relative;
+    }
+
+    .card-content-1::before {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 20px;
+        background-color: #222;
+        clip-path: polygon(50% 84%, 0 0, 100% 0);
+        bottom: -18px;
+        left: 50px;
+    }
+
+    .card-profile-1 {
+        margin-left: 20px;
+    }
+
+    /* CARD 2 */
+    .card-2 {
+        flex-direction: column-reverse;
+        justify-content: center;
+        padding: 16px;
+        border: 2px solid #111;
+        box-shadow: none;
+    }
+
+    /* CARD 3 */
+    .card-3, .slider {
+        grid-column: span 2;
+    }
+
+    .card-3 {
+        flex-direction: row;
+        min-height: 250px;
+        padding: 10px 0;
+        box-shadow: none;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .card-content-3 {
+        display: flex;
+        flex-direction: column;
+        background-color: #222;
+        color: #fff;
+        padding: 26px;
+        border-radius: 16px;
+        max-width: 70%;
+        max-height: 250px;
+        justify-content: space-evenly;
+    }
+
+    .profile-role-3 {
+        color: #aaa;
+    }
+
+    .card-profile-3 img {
+        border-radius: 16px;
+        height: 250px;
+    }
+}   
